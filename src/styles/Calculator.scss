@@ -1,62 +1,38 @@
-// ---------------
-// Variables
-// ---------------
-$bg-color: #2d2d2d;            // Body background
-$calc-bg-color: #3a3a3a;       // Calculator container background
-$display-bg-color: #474747;    // Display background
-$default-btn-color: #6c6c6c;
-$function-btn-color: #4c4c4c;
-$operator-btn-color: #f69906;
-$second-btn-color: #999999;
-$active-btn-color: #c0c0c0;
-$border-radius: 50%;
-$hover-brightness: 110%;
-
-// ---------------
-// Global Styles
-// ---------------
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: $bg-color;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  background-color: #d3d3d3;
   height: 100vh;
   display: grid;
   place-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-// ---------------
-// Calculator Container
-// ---------------
 .calculator-container {
-  display: grid;
-  grid-template-rows: auto auto; 
-  background-color: $calc-bg-color;
+  display: flex;
+  flex-direction: column;
+  background-color: #3a3a3a;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  width: 540px; // Adjust to desired width
+  width: 650px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-// ---------------
-// Calculator Display
-// ---------------
+/* Display area */
 .calculator-display {
-  background-color: $display-bg-color;
+  background-color: #474747;
   color: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  font-size: 2rem;
   border-radius: 10px;
   padding: 10px 20px;
   margin-bottom: 20px;
+  font-size: 2rem;
   min-height: 60px;
 
   .memory-indicator {
-    min-width: 30px; // space for the “M” if memory is active
+    margin-right: 10px;
   }
 
   .display-text {
@@ -65,22 +41,15 @@ body {
   }
 }
 
-// ---------------
-// Button Grid
-// ---------------
 .calculator-buttons {
   display: grid;
-  // Apple’s scientific calculator can have 9 columns in a row.
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   gap: 10px;
 }
 
-// ---------------
-// Button Styles
-// ---------------
 .calc-btn {
   border: none;
-  border-radius: $border-radius;
+  border-radius: 50%;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -88,27 +57,33 @@ body {
   color: #fff;
   transition: background-color 0.2s ease;
 
-  &.default {
-    background-color: $default-btn-color;
-  }
-
-  &.operator {
-    background-color: $operator-btn-color;
-  }
-
-  &.function {
-    background-color: $function-btn-color;
-  }
-
-  &.second {
-    background-color: $second-btn-color;
-  }
-
-  &.active {
-    background-color: $active-btn-color;
+  &.placeholder {
+    background-color: rgb(76, 76, 76);
+    border: none;
+    pointer-events: none;
   }
 
   &:hover {
-    filter: brightness($hover-brightness);
+    filter: brightness(110%);
+  }
+
+  &.default {
+    background-color: #6c6c6c;
+  }
+
+  &.function {
+    background-color: #4c4c4c;
+  }
+
+  &.operator {
+    background-color: #f69906;
+  }
+
+  &.second {
+    background-color: #999;
+  }
+
+  &.active {
+    background-color: #c0c0c0;
   }
 }

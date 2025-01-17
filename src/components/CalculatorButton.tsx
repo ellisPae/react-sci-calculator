@@ -1,15 +1,23 @@
 import React from "react";
 
+export type ButtonVariant =
+  | "function"
+  | "operator"
+  | "active"
+  | "second"
+  | "default"
+  | "placeholder";
+
 interface CalculatorButtonProps {
   label: string;
+  variant: ButtonVariant;
   onClick: (label: string) => void;
-  variant?: "default" | "operator" | "function" | "second" | "active";
 }
 
 const CalculatorButton: React.FC<CalculatorButtonProps> = ({
   label,
+  variant,
   onClick,
-  variant = "default",
 }) => {
   const handleClick = () => {
     onClick(label);
