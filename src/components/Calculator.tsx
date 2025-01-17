@@ -12,6 +12,7 @@ import {
   atan,
 } from "mathjs";
 import CalculatorButton from "./CalculatorButton";
+import "../styles/Calculator.scss";
 
 const Calculator: React.FC = () => {
   const [displayValue, setDisplayValue] = useState("0");
