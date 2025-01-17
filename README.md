@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# React Scientific Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **React + TypeScript** scientific calculator that mimics the look and functionality of the Apple Scientific Calculator. Includes keyboard support, memory functions, and various scientific operations.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
+- **Scientific Layout** with a 10-column grid for Apple-like alignment.
+- **Toggle for “2nd”** to switch between standard and advanced functions (e.g., sin ↔ sin⁻¹).
+- **Memory Functions**: mc, m+, m−, mr.
+- **Common Scientific Operations** (exponents, factorial, logs, trig, etc.).
+- **Placeholder Buttons** to maintain alignment and match the Apple aesthetic.
+- **Keyboard Support** (optional) so users can type digits and operators.
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can use either **npm** or **yarn** for your package manager.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm install`
+`npm install`
 
-### `yarn test`
+(Optional) If you don’t have it already, install mathjs for secure math evaluation:
+`npm install math.js`
+or
+`yarn add math.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running Locally
+`npm start`
+or
+`yarn start`
 
-### `yarn build`
+Open http://localhost:3000 to view the app in your browser.
+The page will reload if you make edits, and you will see any lint errors in the console.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Files Overview
+	•	`src/components/Calculator.tsx`
+Core logic for the calculator, including the layout (rows/columns), button definitions, and main state (display value, memory, second-function toggle).
+	•	`src/components/CalculatorButton.tsx`
+A reusable button component. It accepts label, variant, and a click callback.
+	•	`src/styles/Calculator.scss`
+SCSS styles for the calculator layout, button variants (function/operator/placeholder), and the main display.
+	•	`src/App.tsx`
+A simple wrapper that renders `<Calculator />`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Customizing the Layout
+	•	To change button labels or re-position them, edit the row arrays (e.g., row1, row2, etc.) in Calculator.tsx.
+	•	Ensure each row has 10 items if you’re using a 10-column grid, including placeholder buttons to align operators on the far right.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Known Limitations
+	•	Some advanced scientific functions (like custom log base, degrees vs. radians) may need additional handling in code.
+	•	eval-like calls are replaced by mathjs for safer parsing, but partial expressions can still throw errors.
 
-### `yarn eject`
+Contributing
+	•	Fork this repo, create a new branch for your feature/fix, and open a pull request.
+	•	Keep an eye on lint warnings and code style.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enjoy your React Scientific Calculator! Feel free to expand it with more functions, better styling, or even a “dark/light” mode toggle.
