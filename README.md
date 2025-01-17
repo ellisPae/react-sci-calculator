@@ -57,4 +57,4 @@ If you don’t have it already, install mathjs for secure math evaluation:
 
 
 
-#### Enjoy your React Scientific Calculator! Feel free to expand it with more functions, better styling, or even a “dark/light” mode toggle.
+#### Enjoy your React Scientific Calculator!
